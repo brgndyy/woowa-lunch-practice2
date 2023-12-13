@@ -5,6 +5,7 @@ const CONDITION = deepFreeze({
   max_coach_length: 5,
   min_coach_name_length: 2,
   max_coach_name_length: 4,
+  max_unsuitable_food_length: 2,
 });
 
 export default CONDITION;
