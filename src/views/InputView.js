@@ -8,6 +8,14 @@ const InputView = {
 
     return coachNames.split(DELIMITER.comma).map((name) => name.trim());
   },
+
+  async readUnsuitableFoods(coach) {
+    const unsuitableFoods = await Console.readLineAsync(
+      PROGRESS_MESSAGE.read_unsuitable_foods(coach),
+    );
+
+    return unsuitableFoods.split(DELIMITER.comma).map((food) => food.trim());
+  },
 };
 
 export default InputView;
