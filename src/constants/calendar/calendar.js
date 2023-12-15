@@ -2,23 +2,23 @@ import deepFreeze from '../../utils/deepFreeze.js';
 
 const CALENDAR = deepFreeze([
   {
-    id: 1,
+    id: 0,
     day: '월요일',
   },
   {
-    id: 2,
+    id: 1,
     day: '화요일',
   },
   {
-    id: 3,
+    id: 2,
     day: '수요일',
   },
   {
-    id: 4,
+    id: 3,
     day: '목요일',
   },
   {
-    id: 5,
+    id: 4,
     day: '금요일',
   },
 ]);

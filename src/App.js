@@ -4,6 +4,7 @@ import InputView from './views/InputView.js';
 import CoachNameValidator from './validator/CoachNameValidator.js';
 import UnsuitableFoodsValidator from './validator/UnsuitableFoodsValidator.js';
 import DELIMITER from './constants/delimiters/delimiter.js';
+import RecommendMachine from './domain/RecommendMachine.js';
 
 class App {
   #coachNames;
@@ -14,6 +15,7 @@ class App {
     this.#printStartMessage();
     await asyncFunctionHandlerWithError(this.#readCoachNames, this);
     await asyncFunctionHandlerWithError(this.#readUnsuitableFood, this);
+    this.#printTotalRecommendResult();
   }
 
   #printStartMessage() {
@@ -43,6 +45,13 @@ class App {
     this.#totalCoachInfo.push({ name: coach, unsuitableFoods });
 
     OutputView.divideLine();
+  }
+
+  #printTotalRecommendResult() {
+    const recommendMachine = new RecommendMachine(this.#totalCoachInfo);
+    const totalRecommendHistory = recommendMachine.recommendMenu();
+
+    OutputView.printTotalRecommendResult(totalRecommendHistory);
   }
 }
 
